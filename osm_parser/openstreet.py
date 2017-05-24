@@ -46,6 +46,9 @@ def insertNode():
             lat = Decimal(dic['lat'])
             lon = Decimal(dic['lon'])
 
+            if len(str(lat)) < 6 | len(str(lon)) < 7:
+                break
+
             try:
                 Node.create(node_id=int(dic['id']),
                                    lat=lat,
@@ -240,6 +243,6 @@ if __name__ == '__main__':
     # get_row_count()
     # get_user_count()
 
-    # verify_postcode()
+    verify_postcode()
     # verify_lat_lon()
-    get_fast_food_count()
+    # get_fast_food_count()
